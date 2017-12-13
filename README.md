@@ -39,10 +39,10 @@
 /* 场景4：拍照并裁剪 */  
     private void startImageCapture() {  
         String IMAGE_FILE_LOCATION = Environment.getExternalStorageDirectory() + "/" + "posprint" + "/tmp.jpg";//temp file  
-        imageUri = Uri.fromFile(new File(IMAGE_FILE_LOCATION));//The Uri to store the big bitmap
-        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
-        startActivityForResult(intent, REQUEST_CAPTURE_AND_CROP);
+        imageUri = Uri.fromFile(new File(IMAGE_FILE_LOCATION));//The Uri to store the big bitmap  
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);  
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);  
+        startActivityForResult(intent, REQUEST_CAPTURE_AND_CROP);  
     }  
   
     @Override  
