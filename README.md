@@ -1,17 +1,16 @@
--关于图片的选择和裁剪部分的内容，发现还是有很多需要注意的点。
-
-/* 场景1：选择一张图片 */
-private void gotoPickImage() { 
-  Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI); 
-  startActivityForResult(intent, REQUEST_PICK_IMAGE); 
-  } 
-/* 场景2：选择一张图片并裁剪获得一个小图 */
-private void gotoPickAndCropSmallBitmap() {
-        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-        intent.setType("image/*");
-        intent.putExtra("crop", "true");
-        intent.putExtra("aspectX", 1);
-        intent.putExtra("aspectY", 1);
+-关于图片的选择和裁剪部分的内容，发现还是有很多需要注意的点。＜/br＞
+/* 场景1：选择一张图片 */＜/br＞
+private void gotoPickImage() { ＜/br＞
+  Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI); ＜/br＞
+  startActivityForResult(intent, REQUEST_PICK_IMAGE); ＜/br＞
+  } ＜/br＞
+/* 场景2：选择一张图片并裁剪获得一个小图 */＜/br＞
+private void gotoPickAndCropSmallBitmap() {＜/br＞
+        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);＜/br＞
+        intent.setType("image/*");＜/br＞
+        intent.putExtra("crop", "true");＜/br＞
+        intent.putExtra("aspectX", 1);＜/br＞
+        intent.putExtra("aspectY", 1);＜/br＞
         intent.putExtra("outputX", 300);
         intent.putExtra("outputY", 300);
         intent.putExtra("scale", true);
