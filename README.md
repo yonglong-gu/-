@@ -18,28 +18,27 @@
         intent.putExtra("outputFormat", Bitmap.CompressFormat.JPEG.toString());  
         intent.putExtra("noFaceDetection", true); // no face detection  
         startActivityForResult(intent, REQUEST_CROP_IMAGE_SMALL);  
-    }
-/* 场景3：选择一张图片并裁剪获得一个大图 */
-   private void gotoPickAndCropBigBitmap() {
-        imageUri = getTmpUri();
-        Intent intent = new Intent(Intent.ACTION_GET_CONTENT, null);
-        intent.setType("image/*");
-        intent.putExtra("crop", "true");
-        intent.putExtra("aspectX", 1);
-        intent.putExtra("aspectY", 1);
-        intent.putExtra("outputX", 2000);
-        intent.putExtra("outputY", 2000);
-        intent.putExtra("scale", true);
-        intent.putExtra("return-data", false);
-        intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
-        intent.putExtra("outputFormat", Bitmap.CompressFormat.JPEG.toString());
-        intent.putExtra("noFaceDetection", true); // no face detection
-        startActivityForResult(intent, REQUEST_CROP_IMAGE_BIG);
-    }
-/* 场景4：拍照并裁剪 */
- private void startImageCapture() {
-        String IMAGE_FILE_LOCATION = Environment.getExternalStorageDirectory() + "/" + "posprint" + "/tmp.jpg";//temp file
-
+    }  
+/* 场景3：选择一张图片并裁剪获得一个大图 */  
+   private void gotoPickAndCropBigBitmap() {  
+        imageUri = getTmpUri();  
+        Intent intent = new Intent(Intent.ACTION_GET_CONTENT, null);  
+        intent.setType("image/*");  
+        intent.putExtra("crop", "true");  
+        intent.putExtra("aspectX", 1);  
+        intent.putExtra("aspectY", 1);  
+        intent.putExtra("outputX", 2000);  
+        intent.putExtra("outputY", 2000);  
+        intent.putExtra("scale", true);  
+        intent.putExtra("return-data", false);  
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);  
+        intent.putExtra("outputFormat", Bitmap.CompressFormat.JPEG.toString());  
+        intent.putExtra("noFaceDetection", true); // no face detection  
+        startActivityForResult(intent, REQUEST_CROP_IMAGE_BIG);  
+    }  
+/* 场景4：拍照并裁剪 */  
+    private void startImageCapture() {  
+        String IMAGE_FILE_LOCATION = Environment.getExternalStorageDirectory() + "/" + "posprint" + "/tmp.jpg";//temp file  
         imageUri = Uri.fromFile(new File(IMAGE_FILE_LOCATION));//The Uri to store the big bitmap
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
