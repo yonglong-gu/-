@@ -11,9 +11,9 @@
         intent.putExtra("crop", "true");  
         intent.putExtra("aspectX", 1);  
         intent.putExtra("aspectY", 1);  
-        intent.putExtra("outputX", 300);
-        intent.putExtra("outputY", 300);
-        intent.putExtra("scale", true);
+        intent.putExtra("outputX", 300);  
+        intent.putExtra("outputY", 300);  
+        intent.putExtra("scale", true);  
         intent.putExtra("return-data", true);  
         intent.putExtra("outputFormat", Bitmap.CompressFormat.JPEG.toString());  
         intent.putExtra("noFaceDetection", true); // no face detection  
